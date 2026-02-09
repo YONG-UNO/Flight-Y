@@ -1,0 +1,1 @@
+## iic的dma只支持tx,中断支持tx和rx

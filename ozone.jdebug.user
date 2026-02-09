@@ -1,0 +1,52 @@
+
+
+
+Breakpoint=Z:/MiCloud/CLionProject/Flight-Y/Core/Src/main.c:140:1, State=BP_STATE_DISABLED
+GraphedExpression="(flow).flow_x_i", DisplayFormat=DISPLAY_FORMAT_DEC, Color=#e56a6f, Show=0
+GraphedExpression="(flow).flow_y_i", DisplayFormat=DISPLAY_FORMAT_DEC, Color=#35792b, Show=0
+GraphedExpression="(ranging_data).distance", DisplayFormat=DISPLAY_FORMAT_DEC, Color=#769dda, Show=0
+GraphedExpression="MPU_Attitude_Angle[0]", Color=#b14f0d, Show=0
+GraphedExpression="MPU_Attitude_Angle[1]", Color=#b3c38e, Show=0
+GraphedExpression="MPU_Attitude_Angle[2]", Color=#ab7b05
+OpenDocument="stm32f1xx_it.c", FilePath="Z:/MiCloud/CLionProject/Flight-Y/Core/Src/stm32f1xx_it.c", Line=78
+OpenDocument="integration.c", FilePath="Z:/MiCloud/CLionProject/Flight-Y/UserLib/Module/Task/Integration/integration.c", Line=58
+OpenDocument="main.c", FilePath="Z:/MiCloud/CLionProject/Flight-Y/Core/Src/main.c", Line=64
+OpenDocument="startup_stm32f103xb.s", FilePath="Z:/MiCloud/CLionProject/Flight-Y/startup_stm32f103xb.s", Line=54
+OpenDocument="stm32f1xx_hal.c", FilePath="Z:/MiCloud/CLionProject/Flight-Y/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c", Line=372
+OpenDocument="LED.h", FilePath="Z:/MiCloud/CLionProject/Flight-Y/UserLib/Module/Device/LED/LED.h", Line=0
+OpenDocument="MPU6050.c", FilePath="Z:/MiCloud/CLionProject/Flight-Y/UserLib/Module/Device/MPU6050/MPU6050.c", Line=0
+OpenDocument="optical_flow.c", FilePath="Z:/MiCloud/CLionProject/Flight-Y/UserLib/Module/Device/optical_flow/optical_flow.c", Line=23
+OpenDocument="_default_types.h", FilePath="C:/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/arm-none-eabi/include/machine/_default_types.h", Line=0
+OpenDocument="optical_flow.h", FilePath="Z:/MiCloud/CLionProject/Flight-Y/UserLib/Module/Device/optical_flow/optical_flow.h", Line=0
+OpenDocument="Infrared_ranging.c", FilePath="Z:/MiCloud/CLionProject/Flight-Y/UserLib/Module/Device/Infrared_ranging/Infrared_ranging.c", Line=0
+OpenDocument="stm32f1xx_hal_dma.c", FilePath="Z:/MiCloud/CLionProject/Flight-Y/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c", Line=661
+OpenDocument="infrared_ranging.h", FilePath="Z:/MiCloud/CLionProject/Flight-Y/UserLib/Module/Device/Infrared_ranging/infrared_ranging.h", Line=0
+OpenDocument="stm32f1xx_hal_uart.c", FilePath="Z:/MiCloud/CLionProject/Flight-Y/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c", Line=3086
+OpenDocument="usart.h", FilePath="Z:/MiCloud/CLionProject/Flight-Y/Core/Inc/usart.h", Line=0
+OpenDocument="usart.c", FilePath="Z:/MiCloud/CLionProject/Flight-Y/Core/Src/usart.c", Line=0
+OpenDocument="gpio.h", FilePath="Z:/MiCloud/CLionProject/Flight-Y/Core/Inc/gpio.h", Line=0
+OpenToolbar="Debug", Floating=0, x=0, y=0
+OpenWindow="Source Files", DockArea=LEFT, x=0, y=0, w=235, h=652, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=660, h=181, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Watched Data 1", DockArea=RIGHT, x=0, y=2, w=660, h=291, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Data Sampling", DockArea=RIGHT, x=0, y=1, w=660, h=178, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VisibleTab=0, UniformSampleSpacing=0
+OpenWindow="Timeline", DockArea=BOTTOM, x=0, y=0, w=1707, h=325, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=1, DataPaneShown=1, PowerPaneShown=0, CodePaneShown=0, PinCursor="Cursor Movable", TimePerDiv="10 s / Div", TimeStampFormat="Time", DataGraphDrawAsPoints=0, DataGraphLegendShown=1, DataGraphUniformSampleSpacing=0, DataGraphLegendPosition="170;0", DataGraphShowNamesAtCursor=0, PowerGraphDrawAsPoints=0, PowerGraphLegendShown=0, PowerGraphAvgFilterTime=Off, PowerGraphAvgFilterLen=Off, PowerGraphUniformSampleSpacing=0, PowerGraphLegendPosition="1510;0", CodeGraphLegendShown=0, CodeGraphLegendPosition="1524;0"
+SmartViewPlugin="", Page="", Toolbar="Hidden", Window="SmartView 1"
+TableHeader="Source Files", SortCol="File", SortOrder="ASCENDING", VisibleCols=["File";"Status";"Size";"#Insts";"Path"], ColWidths=[271;100;100;100;791]
+TableHeader="Data Sampling Table", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";" (flow).flow_x_i";" (flow).flow_y_i";" (ranging_data).distance";" MPU_Attitude_Angle[0]";" MPU_Attitude_Angle[1]";" MPU_Attitude_Angle[2]"], ColWidths=[100;100;100;100;100;100;100;100]
+TableHeader="Data Sampling Setup", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Type";"Value";"Min";"Max";"Average";"# Changes";"Min. Change";"Max. Change"], ColWidths=[334;126;110;102;126;126;102;134;126]
+TableHeader="Power Sampling", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
+TableHeader="Watched Data 1", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Value";"Location";"Refresh"], ColWidths=[250;158;104;131]
+TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]
+TableHeader="TargetExceptionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Address";"Description"], ColWidths=[200;100;100;429]
+WatchedExpression="flow", RefreshRate=5, DisplayFormat=DISPLAY_FORMAT_DEC, Window=Watched Data 1
+WatchedExpression="dma_rx_buf", RefreshRate=5, DisplayFormat=DISPLAY_FORMAT_DEC, Window=Watched Data 1
+WatchedExpression="rx_buf", RefreshRate=5, Window=Watched Data 1
+WatchedExpression="ranging_data", RefreshRate=5, Window=Watched Data 1
+WatchedExpression="MPU6050", RefreshRate=5, Window=Watched Data 1
+WatchedExpression="MPU6050", RefreshRate=5, Window=Watched Data 1
+WatchedExpression="MPU_Angle", RefreshRate=5, Window=Watched Data 1
+WatchedExpression="roll", RefreshRate=5, Window=Watched Data 1
+WatchedExpression="pitch", RefreshRate=5, Window=Watched Data 1
+WatchedExpression="yaw", RefreshRate=5, Window=Watched Data 1
+WatchedExpression="MPU_Attitude_Angle", RefreshRate=5, Window=Watched Data 1
