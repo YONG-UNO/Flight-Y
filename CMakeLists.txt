@@ -52,6 +52,7 @@ add_executable(${CMAKE_PROJECT_NAME}
 #        UserLib/Module/Algorithm/MPU_Integration/MPU_Integration.c
         UserLib/Module/Task/Integration/integration.c
         UserLib/Module/Device/MPU6050/MahonyAHRS.c
+        UserLib/Module/Task/Control_Pitch/Control_Pitch.c
 )
 
 # Add STM32CubeMX generated sources
@@ -79,6 +80,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         ${CMAKE_SOURCE_DIR}/UserLib/Module/Algorithm/PID
 #        ${CMAKE_SOURCE_DIR}/UserLib/Module/Algorithm/MPU_Integration
         ${CMAKE_SOURCE_DIR}/UserLib/Module/Task/Integration
+        ${CMAKE_SOURCE_DIR}/UserLib/Module/Task/Control
 )
 
 # Add project symbols (macros)

@@ -22,7 +22,6 @@
 #include "task.h"
 #include "main.h"
 #include "cmsis_os.h"
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -52,15 +51,22 @@ osThreadId_t INTEGRATIONHandle;
 const osThreadAttr_t INTEGRATION_attributes = {
   .name = "INTEGRATION",
   .stack_size = 256 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityRealtime5,
 };
-
+/* Definitions for CONTROL_PITCH */
+osThreadId_t CONTROL_PITCHHandle;
+const osThreadAttr_t CONTROL_PITCH_attributes = {
+  .name = "CONTROL_PITCH",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityRealtime7,
+};
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
 
 /* USER CODE END FunctionPrototypes */
 
 void Integration(void *argument);
+void Control_Pitch(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -94,6 +100,9 @@ void MX_FREERTOS_Init(void) {
   /* creation of INTEGRATION */
   INTEGRATIONHandle = osThreadNew(Integration, NULL, &INTEGRATION_attributes);
 
+  /* creation of CONTROL_PITCH */
+  CONTROL_PITCHHandle = osThreadNew(Control_Pitch, NULL, &CONTROL_PITCH_attributes);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -120,6 +129,24 @@ __weak void Integration(void *argument)
     osDelay(1);
   }
   /* USER CODE END Integration */
+}
+
+/* USER CODE BEGIN Header_Control_Pitch */
+/**
+* @brief Function implementing the CONTROL_PITCH thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Control_Pitch */
+__weak void Control_Pitch(void *argument)
+{
+  /* USER CODE BEGIN Control_Pitch */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Control_Pitch */
 }
 
 /* Private application code --------------------------------------------------*/

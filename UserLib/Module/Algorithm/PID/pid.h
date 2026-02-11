@@ -24,5 +24,6 @@ typedef struct {
 } pid_t;
 
 void pid_calc(pid_t *pid, float target, float feedback);
+void pitch_pid_init(pid_t *angularVelocity_pid,pid_t *angular_pid);
 
 #endif //PID_H

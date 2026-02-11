@@ -18,6 +18,9 @@ typedef struct {
     int8_t qual;       // 信号质量(0~255)
 } flow_t;
 
+extern flow_t flow; // 光流数据实例
+
+
 /* 函数 */
 void flow_init(void);  // 初始化光流解析模块
 void flow_input(uint8_t byte);  // 单字节解析

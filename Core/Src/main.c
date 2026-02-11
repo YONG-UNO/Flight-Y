@@ -21,6 +21,7 @@
 #include "cmsis_os.h"
 #include "dma.h"
 #include "i2c.h"
+#include "spi.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -31,6 +32,7 @@
 #include "optical_flow.h"
 #include "soft_iic2.h"
 #include "LED.h"
+#include "MPU6050.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -100,6 +102,7 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM4_Init();
   MX_I2C1_Init();
+  MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
     HAL_UART_Receive_DMA(&huart1, dma_rx_buf, 9);
     flow_init();
@@ -108,6 +111,12 @@ int main(void)
     ranging_init();
 
     HAL_TIM_Base_Start_IT(&htim4);
+    MPU6050_Init();
+
+    HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_1);
+    HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_2);
+    HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_3);
+    HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_4);
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -125,6 +134,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
