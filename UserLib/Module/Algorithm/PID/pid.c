@@ -27,6 +27,7 @@ void pid_calc(pid_t *pid, float target, float feedback) {
 }
 
 
+
 void pitch_pid_init(pid_t *angularVelocity_pid,pid_t *angular_pid){
     // Id环(将d轴电流压到0,避免电机磁链波动)
     angularVelocity_pid->kp = 0.0f;
