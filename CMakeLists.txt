@@ -42,17 +42,17 @@ set(CMAKE_CXX_EXTENSIONS OFF)           # 禁用编译器特有拓展,提升代�
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
-        UserLib/Module/Device/optical_flow/optical_flow.c
-        UserLib/Module/Device/Infrared_ranging/Infrared_ranging.c
-        UserLib/BSP/Soft_IIC/soft_iic2.c
-        UserLib/Module/Device/LED/LED.c
-        UserLib/Module/Device/MPU6050/MPU6050.c
-        UserLib/Module/Algorithm/Kalman/kalman.c
-        UserLib/Module/Algorithm/PID/pid.c
-#        UserLib/Module/Algorithm/MPU_Integration/MPU_Integration.c
-        UserLib/Module/Task/Integration/integration.c
-        UserLib/Module/Device/MPU6050/MahonyAHRS.c
-        UserLib/Module/Task/Control_Pitch/Control_Pitch.c
+#        UserLib/Module/Device/optical_flow/optical_flow.c
+#        UserLib/Module/Device/Infrared_ranging/Infrared_ranging.c
+#        UserLib/BSP/Soft_IIC/soft_iic2.c
+#        UserLib/Module/Device/LED/LED.c
+#        UserLib/Module/Device/MPU6050/MPU6050.c
+#        UserLib/Module/Algorithm/Kalman/kalman.c
+#        #        UserLib/Module/Algorithm/MPU_Integration/MPU_Integration.c
+#        UserLib/Module/Task/Integration/integration.c
+#        UserLib/Module/Device/MPU6050/MahonyAHRS.c
+#        UserLib/Module/Task/Control_Pitch/Control_Pitch.c
+        UserLib/Module/Algorithm/PID/PID.cpp
 )
 
 # Add STM32CubeMX generated sources
@@ -71,16 +71,17 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
-        ${CMAKE_SOURCE_DIR}/UserLib/Module/Device/optical_flow
-        ${CMAKE_SOURCE_DIR}/UserLib/Module/Device/infrared_ranging
-        ${CMAKE_SOURCE_DIR}/UserLib/BSP/Soft_IIC
-        ${CMAKE_SOURCE_DIR}/UserLib/Module/Device/LED
-        ${CMAKE_SOURCE_DIR}/UserLib/Module/Device/MPU6050
-        ${CMAKE_SOURCE_DIR}/UserLib/Module/Algorithm/Kalman
-        ${CMAKE_SOURCE_DIR}/UserLib/Module/Algorithm/PID
+#        ${CMAKE_SOURCE_DIR}/UserLib/Module/Device/optical_flow
+#        ${CMAKE_SOURCE_DIR}/UserLib/Module/Device/infrared_ranging
+#        ${CMAKE_SOURCE_DIR}/UserLib/BSP/Soft_IIC
+#        ${CMAKE_SOURCE_DIR}/UserLib/Module/Device/LED
+#        ${CMAKE_SOURCE_DIR}/UserLib/Module/Device/MPU6050
+#        ${CMAKE_SOURCE_DIR}/UserLib/Module/Algorithm/Kalman
+#        ${CMAKE_SOURCE_DIR}/UserLib/Module/Algorithm/PID
 #        ${CMAKE_SOURCE_DIR}/UserLib/Module/Algorithm/MPU_Integration
-        ${CMAKE_SOURCE_DIR}/UserLib/Module/Task/Integration
-        ${CMAKE_SOURCE_DIR}/UserLib/Module/Task/Control
+#        ${CMAKE_SOURCE_DIR}/UserLib/Module/Task/Integration
+#        ${CMAKE_SOURCE_DIR}/UserLib/Module/Task/Control
+        ${CMAKE_SOURCE_DIR}/UserLib/Module/Algorithm/PID
 )
 
 # Add project symbols (macros)

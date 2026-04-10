@@ -21,7 +21,7 @@
 #include "usart.h"
 
 /* USER CODE BEGIN 0 */
-#include "optical_flow.h"
+// #include "optical_flow.h"
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart1;
@@ -137,9 +137,9 @@ extern uint8_t dma_rx_buf[];
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
-    for (int i = 0; i < 9; i++) {
-        flow_input(dma_rx_buf[i]);
-    }
+    // for (int i = 0; i < 9; i++) {
+    //     flow_input(dma_rx_buf[i]);
+    // }
 
     HAL_UART_Receive_DMA(&huart1, dma_rx_buf, 9);
 }

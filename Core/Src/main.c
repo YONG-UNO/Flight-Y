@@ -28,11 +28,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "infrared_ranging.h"
-#include "optical_flow.h"
-#include "soft_iic2.h"
-#include "LED.h"
-#include "MPU6050.h"
+// #include "infrared_ranging.h"
+// #include "optical_flow.h"
+// #include "soft_iic2.h"
+// #include "LED.h"
+// #include "MPU6050.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -105,13 +105,13 @@ int main(void)
   MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
     HAL_UART_Receive_DMA(&huart1, dma_rx_buf, 9);
-    flow_init();
-
-    Soft_IIC2_Init();
-    ranging_init();
+    // flow_init();
+    //
+    // Soft_IIC2_Init();
+    // ranging_init();
 
     HAL_TIM_Base_Start_IT(&htim4);
-    MPU6050_Init();
+    // MPU6050_Init();
 
     HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_2);
@@ -204,7 +204,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-    if (htim->Instance == TIM4) ranging_read();
+    // if (htim->Instance == TIM4) ranging_read();
   /* USER CODE END Callback 1 */
 }
 
