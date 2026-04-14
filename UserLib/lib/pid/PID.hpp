@@ -4,8 +4,7 @@
 
 #pragma once
 
-// #include <math.h>
-// #include <stdbool.h>
+#include <cmath>
 
 class PID
 {
@@ -25,7 +24,12 @@ public:
     float getIntegral() { return _integral; }
     void resetIntegral() { _integral = 0.0f; }
 private:
-    void
+    void updateIntegral(float error, const float dt);
+    float updateDerivative(float feedback, const float dt);
+
+    float _setpoint = 0.0f; // current setpoint to track
+    float _integral = 0.0f; // integral state 官方叫做积分状态貌似是因为积分是累加状态
+    float _last_feedback = NAN;
     // Gains,Limits
     float _gain_proportional = 0.0f;
     float _gain_integral     = 0.0f;
