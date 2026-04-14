@@ -1,0 +1,8 @@
+//
+// Created by DingYong on 2026/4/14.
+//
+
+#ifndef FLIGHT_Y_ATTITUDECONTROL_H
+#define FLIGHT_Y_ATTITUDECONTROL_H
+
+#endif //FLIGHT_Y_ATTITUDECONTROL_H
