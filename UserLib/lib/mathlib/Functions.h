@@ -5,8 +5,6 @@
 #ifndef FLIGHT_Y_FUNCTIONS_H
 #define FLIGHT_Y_FUNCTIONS_H
 
-float constrain(float val ,float min_val,float max_val) {
-    return (val < min_val) ? min_val : ((val > max_val) ? max_val : val);
-}
+float constrain(float val ,float min_val,float max_val);
 
 #endif //FLIGHT_Y_FUNCTIONS_H
