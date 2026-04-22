@@ -18,6 +18,8 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "Debug")
 endif()
 
+set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+
 # Set the project name
 set(CMAKE_PROJECT_NAME Flight-Y)
 
@@ -61,7 +63,8 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         ${CMAKE_SOURCE_DIR}/UserLib/lib/mathlib
         ${CMAKE_SOURCE_DIR}/UserLib/StatusTypeDef_Y
         ${CMAKE_SOURCE_DIR}/UserLib/Module/Device/MPU6050
-
+        ${CMAKE_SOURCE_DIR}/UserLib/Module/mc_att_control
+        ${CMAKE_SOURCE_DIR}/UserLib/Task
 )
 
 # Add project symbols (macros)
