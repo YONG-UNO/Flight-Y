@@ -34,7 +34,13 @@ enable_language(C ASM)
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
         UserLib/Task/Attitude_loop/attitude_loop_task.cpp
-        UserLib/Task/Attitude_loop/attitude_loop_task.hpp)
+        UserLib/Module/mc_att_control/AttitudeControlSimple.cpp
+        UserLib/lib/mathlib/Matrix.cpp
+        UserLib/Task/IMUupdata.cpp
+        UserLib/Module/Device/MPU6050/MPU6050.cpp
+        UserLib/Module/Device/MPU6050/MahonyAHRS.cpp
+        UserLib/StatusTypeDef_Y/StatusTypeDef_Y.cpp
+)
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
@@ -52,6 +58,10 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
+        ${CMAKE_SOURCE_DIR}/UserLib/lib/mathlib
+        ${CMAKE_SOURCE_DIR}/UserLib/StatusTypeDef_Y
+        ${CMAKE_SOURCE_DIR}/UserLib/Module/Device/MPU6050
+
 )
 
 # Add project symbols (macros)
