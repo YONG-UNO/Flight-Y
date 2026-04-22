@@ -14,6 +14,8 @@
     #define MahonyAHRS_hpp
     #include <math.h>
 
+#include "Matrix.hpp"
+
     //--------------------------------------------------------------------------------------------
     // Variable declaration
 
@@ -65,10 +67,7 @@
 		    return yaw;
 	    }
 
-        // inline function，use const to only read
-        inline float getRoll() const {return roll;}
-        inline float getPitch() const {return pitch;}
-        inline float getYaw() const {return yaw;}
+    	matrix::Quatf getQuaternion();
 
     };
 

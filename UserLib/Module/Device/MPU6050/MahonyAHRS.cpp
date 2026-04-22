@@ -27,9 +27,9 @@
 //-------------------------------------------------------------------------------------------
 // Definitions
 
-#define DEFAULT_SAMPLE_FREQ	512.0f	// sample frequency in Hz
-#define twoKpDef	(2.0f * 0.5f)	// 2 * proportional gain
-#define twoKiDef	(2.0f * 0.0f)	// 2 * integral gain
+#define DEFAULT_SAMPLE_FREQ	1024.0f	// sample frequency in Hz
+#define twoKpDef	(2.0f * 5.0f)	// 2 * proportional gain
+#define twoKiDef	(2.0f * 0.1f)	// 2 * integral gain
 
 
 //============================================================================================
@@ -266,6 +266,13 @@ void Mahony::computeAngles()
 	pitch = asinf(-2.0f * (q1*q3 - q0*q2));
 	yaw = atan2f(q1*q2 + q0*q3, 0.5f - q2*q2 - q3*q3);
 	anglesComputed = 1;
+}
+
+// get current quaternion (w,x,y,z)
+matrix::Quatf Mahony::getQuaternion()
+{
+	// directly copy the internal normalized quaternion
+	return matrix::Quatf(q0,q1,q2,q3);
 }
 
 
