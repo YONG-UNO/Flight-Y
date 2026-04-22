@@ -68,7 +68,7 @@ StatusTypeDef_Y MPU6050::init()
     HAL_Delay(5);
     I2C_Write(REG_GYRO_CONFIG, 0x18); // 陀螺仪±2000°/s（FS_SEL=3）
     HAL_Delay(5);
-    I2C_Write(REG_ACCEL_CONFIG, 0x08); // 加速度计±4G（AFS_SEL=1）
+    I2C_Write(REG_ACCEL_CONFIG, 0x00); // 加速度计±2G（AFS_SEL=0）
     HAL_Delay(5);
     I2C_Write(REG_PWR_MGMT_1, 0x03);  // 时钟源=陀螺仪Z轴（手册推荐提升稳定性）
     HAL_Delay(5);
@@ -95,12 +95,12 @@ void MPU6050::readData()
     data.gyro_raw[1] = (int16_t)(raw_data[10] << 8 | raw_data[11]);
     data.gyro_raw[2] = (int16_t)(raw_data[12] << 8 | raw_data[13]);
 
-    data.acc[0]  = (float)data.acc_raw[0] / ACC_FS_4G_LSB;
-    data.acc[1]  = (float)data.acc_raw[1] / ACC_FS_4G_LSB;
-    data.acc[2]  = (float)data.acc_raw[2] / ACC_FS_4G_LSB;
-    data.gyro[0] = (float)data.gyro_raw[0] / GYRO_FS_2000DPS_LSB;
+    data.acc[0]  = (float)data.acc_raw[0] / ACC_FS_2G_LSB;
+    data.acc[1]  = -(float)data.acc_raw[1] / ACC_FS_2G_LSB;
+    data.acc[2]  = (float)data.acc_raw[2] / ACC_FS_2G_LSB;
+    data.gyro[0] = -(float)data.gyro_raw[0] / GYRO_FS_2000DPS_LSB;
     data.gyro[1] = (float)data.gyro_raw[1] / GYRO_FS_2000DPS_LSB;
-    data.gyro[2] = (float)data.gyro_raw[2] / GYRO_FS_2000DPS_LSB;
+    data.gyro[2] = -(float)data.gyro_raw[2] / GYRO_FS_2000DPS_LSB;
     // 5. 温度转换（手册6.3节公式：T(℃)=TEMP_OUT/340 + 36.53）
     data.temperature = (float)data.temp_raw / 340.0f + 36.53f;
 

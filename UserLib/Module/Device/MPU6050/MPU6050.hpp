@@ -60,6 +60,7 @@
 #define REG_WHO_AM_I     0x75   // 设备ID
 
 // 量程灵敏度（手册6.1/6.2节）
+#define ACC_FS_2G_LSB  16384.0f   // ±4G → 8192 LSB/g
 #define ACC_FS_4G_LSB  8192.0f   // ±4G → 8192 LSB/g
 #define GYRO_FS_2000DPS_LSB 16.4f// ±2000°/s → 16.4 LSB/(°/s)
 
