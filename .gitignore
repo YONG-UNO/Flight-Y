@@ -5,6 +5,7 @@
 /Core/
 /Middlewares/
 /.mxproject
+/.idea
 /STM32F103XX_FLASH.ld
 /CMakeLists.txt
 /CMakePresets.json
