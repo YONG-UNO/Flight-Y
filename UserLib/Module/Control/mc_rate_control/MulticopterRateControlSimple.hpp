@@ -4,12 +4,9 @@
 
 #pragma once
 
+#include "FreeRTOS.h"
 #include "PID.hpp"
-
-namespace matrix
-{
-    class Vector3f;
-}
+#include "Matrix.hpp"
 
 class MulticopterRateControlSimple
 {
@@ -27,10 +24,21 @@ public:
 
     // main control function
     matrix::Vector3f run(matrix::Vector3f target_rate,
-        matrix::Vector3f actual_gyro,)
+        matrix::Vector3f actual_gyro,float dt,bool update_integral)
     {
+        // run 3 PIDs
+        matrix::Vector3f torque;
 
+        _roll_pid.setSetpoint(target_rate.x);
+        torque.x = _roll_pid.update(actual_gyro.x,dt,update_integral);
+        _roll_pid.setSetpoint(target_rate.y);
+        torque.y = _roll_pid.update(actual_gyro.y,dt,update_integral);
+        _roll_pid.setSetpoint(target_rate.z);
+        torque.z = _roll_pid.update(actual_gyro.z,dt,update_integral);
+
+        return torque;
     }
+
 private:
     PID _roll_pid;
     PID _pitch_pid;

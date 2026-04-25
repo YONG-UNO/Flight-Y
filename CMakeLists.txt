@@ -36,16 +36,18 @@ enable_language(C ASM)
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
         UserLib/Task/Attitude_loop/attitude_loop_task.cpp
-        UserLib/Module/mc_att_control/AttitudeControlSimple.cpp
-        UserLib/lib/mathlib/Matrix.cpp
+        UserLib/Tool/mathlib/Matrix.cpp
         UserLib/Task/IMUupdata.cpp
         UserLib/Module/Device/MPU6050/MPU6050.cpp
         UserLib/Module/Device/MPU6050/MahonyAHRS.cpp
-        UserLib/StatusTypeDef_Y/StatusTypeDef_Y.cpp
-        UserLib/Module/mc_rate_control/MulticopterRateControl.cpp
-        UserLib/Module/mc_rate_control/MulticopterRateControlSimple.cpp
-        UserLib/Module/mc_rate_control/MulticopterRateControlSimple.hpp
-        UserLib/lib/pid/PID.cpp
+        UserLib/Tool/StatusTypeDef_Y/StatusTypeDef_Y.cpp
+        UserLib/Module/Control/mc_rate_control/MulticopterRateControl.cpp
+        UserLib/Module/Control/mc_att_control/AttitudeControlSimple.cpp
+        UserLib/Module/Control/mc_rate_control/MulticopterRateControlSimple.cpp
+        UserLib/Module/Algorithm/pid/PID.cpp
+        UserLib/Tool/CSV_Logger/csvLogger.cpp
+        UserLib/Module/Control/mc_att_control/AttitudeControl.h
+        UserLib/Module/Algorithm/pid/PID.cpp
 )
 
 # Add STM32CubeMX generated sources
@@ -64,13 +66,13 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
-        ${CMAKE_SOURCE_DIR}/UserLib/lib/mathlib
-        ${CMAKE_SOURCE_DIR}/UserLib/StatusTypeDef_Y
-        ${CMAKE_SOURCE_DIR}/UserLib/Module/Device/MPU6050
-        ${CMAKE_SOURCE_DIR}/UserLib/Module/mc_att_control
+        ${CMAKE_SOURCE_DIR}/UserLib/Tool/mathlib
+        ${CMAKE_SOURCE_DIR}/UserLib/Tool/StatusTypeDef_Y
+        ${CMAKE_SOURCE_DIR}/UserLib/Module/Control/Device/MPU6050
+        ${CMAKE_SOURCE_DIR}/UserLib/Module/Control/mc_att_control
         ${CMAKE_SOURCE_DIR}/UserLib/Task
-        ${CMAKE_SOURCE_DIR}/UserLib/lib/pid
-        ${CMAKE_SOURCE_DIR}/UserLib/Module/mc_rate_control
+        ${CMAKE_SOURCE_DIR}/UserLib/Module/Algorithm/pid
+        ${CMAKE_SOURCE_DIR}/UserLib/Module/Control/mc_rate_control
 )
 
 # Add project symbols (macros)
