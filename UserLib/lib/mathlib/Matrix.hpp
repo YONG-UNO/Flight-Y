@@ -35,7 +35,7 @@ namespace matrix
         {
             if (i==0) return x;
             if (i==1) return y;
-            if (i==2) return z;
+            return z; // for safe
         }
 
         // vector * num
