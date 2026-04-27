@@ -1,0 +1,8 @@
+//
+// Created by DingYong on 2026/4/27.
+//
+
+#ifndef FLIGHT_Y_MULTIROTORMIXER_HPP
+#define FLIGHT_Y_MULTIROTORMIXER_HPP
+
+#endif //FLIGHT_Y_MULTIROTORMIXER_HPP
