@@ -7,6 +7,7 @@
 #include "MahonyAHRS.hpp"
 
 extern Mahony mahony;
+extern float euler[3];
 
 extern "C" {
 

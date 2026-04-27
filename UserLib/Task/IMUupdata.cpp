@@ -14,7 +14,7 @@ static MPU6050 mpu(&hi2c1);
 #define k 0.95f
 
 static float acc[3],gyro[3];
-static float euler[3];
+float euler[3];
 static float euler_last[3];
 void imuUpdate(void const * argument)
 {
