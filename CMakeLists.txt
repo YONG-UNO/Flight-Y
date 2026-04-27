@@ -37,7 +37,6 @@ enable_language(C ASM)
 add_executable(${CMAKE_PROJECT_NAME}
         UserLib/Task/Attitude_loop/attitude_loop_task.cpp
         UserLib/Tool/mathlib/Matrix.cpp
-        UserLib/Task/IMUupdata.cpp
         UserLib/Module/Device/MPU6050/MPU6050.cpp
         UserLib/Module/Device/MPU6050/MahonyAHRS.cpp
         UserLib/Tool/StatusTypeDef_Y/StatusTypeDef_Y.cpp
@@ -45,9 +44,15 @@ add_executable(${CMAKE_PROJECT_NAME}
         UserLib/Module/Control/mc_att_control/AttitudeControlSimple.cpp
         UserLib/Module/Control/mc_rate_control/MulticopterRateControlSimple.cpp
         UserLib/Module/Algorithm/pid/PID.cpp
-        UserLib/Tool/CSV_Logger/csvLogger.cpp
+        UserLib/Tool/Log_Y/Log_Y.cpp
         UserLib/Module/Control/mc_att_control/AttitudeControl.h
         UserLib/Module/Algorithm/pid/PID.cpp
+        UserLib/Task/IMUupdata.cpp
+        UserLib/Task/Log_Y_Task/Log_Y_task.cpp
+        UserLib/Tool/Log_Y/SEGGER_RTT/SEGGER_RTT.c
+        UserLib/Tool/Log_Y/SEGGER_RTT/SEGGER_RTT_printf.c
+        UserLib/Module/Control/mc_mix_control/MultirotorMixer.cpp
+        UserLib/Module/Control/mc_mix_control/MultirotorMixer.hpp
 )
 
 # Add STM32CubeMX generated sources
@@ -68,11 +73,13 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
         ${CMAKE_SOURCE_DIR}/UserLib/Tool/mathlib
         ${CMAKE_SOURCE_DIR}/UserLib/Tool/StatusTypeDef_Y
-        ${CMAKE_SOURCE_DIR}/UserLib/Module/Control/Device/MPU6050
+        ${CMAKE_SOURCE_DIR}/UserLib/Module/Device/MPU6050
         ${CMAKE_SOURCE_DIR}/UserLib/Module/Control/mc_att_control
+        ${CMAKE_SOURCE_DIR}/UserLib/Task/Log_Y_Task
         ${CMAKE_SOURCE_DIR}/UserLib/Task
         ${CMAKE_SOURCE_DIR}/UserLib/Module/Algorithm/pid
         ${CMAKE_SOURCE_DIR}/UserLib/Module/Control/mc_rate_control
+        ${CMAKE_SOURCE_DIR}/UserLib/Tool/Log_Y/SEGGER_RTT
 )
 
 # Add project symbols (macros)
