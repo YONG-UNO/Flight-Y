@@ -9,3 +9,4 @@
 /STM32F103XX_FLASH.ld
 /CMakePresets.json
 /startup_stm32f103xb.s
+/Flight-Y.jdebug.user

@@ -53,6 +53,7 @@ add_executable(${CMAKE_PROJECT_NAME}
         UserLib/Tool/Log_Y/SEGGER_RTT/SEGGER_RTT_printf.c
         UserLib/Module/Control/mc_mix_control/MultirotorMixer.cpp
         UserLib/Module/Control/mc_mix_control/MultirotorMixer.hpp
+        UserLib/Tool/mathlib/Functions.cpp
 )
 
 # Add STM32CubeMX generated sources

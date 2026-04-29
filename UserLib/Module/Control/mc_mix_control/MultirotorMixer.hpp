@@ -1,7 +1,14 @@
-//
-// Created by DingYong on 2026/4/27.
-//
-
+/**
+* @file MultirotorMixer.hpp
+ * @brief 多旋翼混控器（四轴X型）
+ * @author DingYong
+ * @version V1.0.0
+ * @date 2026-04-27
+ *
+ * @history
+ * 版本      日期        作者       变更内容
+ * V1.0.0    2026-04-27  DingYong   初版创建,支持四轴X混控
+ */
 #pragma once
 
 #include "Functions.hpp"

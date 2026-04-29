@@ -1,11 +1,18 @@
-//
-// Created by DingYong on 2026/4/10.
-// Version V1.0.1
-// Brief 修改于原C语言版本
-//
+/**
+* @file PID.hpp
+ * @brief 通用PID控制器
+ * @author DingYong
+ * @version V1.0.0
+ * @date 2026-04-27
+ *
+ * @history
+ * 版本      日期        作者       变更内容
+ * V1.0.0    2026-04-27  DingYong   初版创建
+ * V1.0.1    2026-04-28  DingYong   优化积分限幅,增加死区
+ */
 
 #include "PID.hpp"
-#include "Functions.h"
+#include "Functions.hpp"
 #include <float.h>
 
 void PID::setGains(const float P, const float I, const float D) {
@@ -23,7 +30,7 @@ float PID::update(const float feedback, const float dt, const bool update_integr
     }
 
     _last_feedback = feedback;
-    return constrain(output, -_limit_output, _limit_output);
+    return math::constrain(output, -_limit_output, _limit_output);
 }
 
 // @todo:add cconstrain
