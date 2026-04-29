@@ -12,7 +12,7 @@
  */
 
 #include "PID.hpp"
-#include "Functions.hpp"
+#include "mathlib.hpp"
 #include <float.h>
 
 void PID::setGains(const float P, const float I, const float D) {

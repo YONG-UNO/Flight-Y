@@ -11,7 +11,7 @@
  */
 #pragma once
 
-#include "Functions.hpp"
+#include "mathlib.hpp"
 #include "Matrix.hpp"
 
 // 最多支持的电机数
