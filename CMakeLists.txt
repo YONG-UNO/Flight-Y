@@ -49,8 +49,8 @@ add_executable(${CMAKE_PROJECT_NAME}
         UserLib/Module/Algorithm/pid/PID.cpp
         UserLib/Task/IMUupdata.cpp
         UserLib/Task/Log_Y_Task/Log_Y_task.cpp
-        UserLib/Tool/Log_Y/SEGGER_RTT/SEGGER_RTT.c
-        UserLib/Tool/Log_Y/SEGGER_RTT/SEGGER_RTT_printf.c
+        UserLib/Tool/Log_Y/SEGGER_RTT/SEGGER_RTT.cpp
+        UserLib/Tool/Log_Y/SEGGER_RTT/SEGGER_RTT_printf.cpp
         UserLib/Module/Control/mc_mix_control/MultirotorMixer.cpp
         UserLib/Module/Control/mc_mix_control/MultirotorMixer.hpp
         UserLib/Tool/mathlib/mathlib.cpp

@@ -3,7 +3,7 @@
 #include "stm32f1xx_hal.h"
 
 extern "C" {
-#include "SEGGER_RTT.h"
+#include "SEGGER_RTT.hpp"
 }
 
 float static dis_data[3];
